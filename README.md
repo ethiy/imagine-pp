@@ -1,5 +1,12 @@
 # Imagine++
 
+[![GitHub license](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://raw.githubusercontent.com/Ethiy/imagine-pp/master/LICENSE)
+
+| Environment              | Status        |
+| ------------------------ |:-------------:|
+| Linux                    | [![Build Status](https://travis-ci.org/Ethiy/imagine-pp.svg?branch=master)](https://travis-ci.org/Ethiy/imagine-pp)|
+| Darwin                   |[![Build Status](https://travis-ci.org/Ethiy/imagine-pp.svg?branch=master)](https://travis-ci.org/Ethiy/imagine-pp)]|
+
 ## Disclaimer
 
 This is a fork of the [Imagine++ project](http://imagine.enpc.fr/~monasse/Imagine++) developped by [Imagine research group](http://imagine.enpc.fr).
