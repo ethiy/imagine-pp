@@ -1,0 +1,84 @@
+/*! \page install_windows Windows installation
+
+  Imagine++ libraries are tested with Microsoft Visual Studio 2015 and minGW32, for which binaries are provided through installers.
+  
+  Visual Studio 2015 is free and can compile 32 and 64 bits programs. Programs compiled in 32 bits still work on Windows 64 bits.
+
+  \section iw0 Requirements
+
+  - install CMake, the cross-platform build system (http://www.cmake.org/download/). Choose the following option:
+  \image html cmakeInstall.png
+  - install Qt <b>for MinGW</b> (https://www.qt.io/download-open-source/). Skip the account proposal. Choose the components to install, especially the minGW compiler:
+  \image html qtmingw.png "Choose the latest Qt version and the MinGW 5.3.0 compiler."
+
+  \section iw1 Installers
+
+  For minGW:
+  - http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-win_x86_minGW.exe
+
+  For Visual Studio 2015:
+  - 32 bits version: http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-win_x86_msvc2015.exe
+  - 64 bits version: http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-win_x64_msvc2015.exe
+
+  \section iw1a Using Visual Studio instead of QtCreator
+  If you want to use Visual Studio instead of QtCreator as IDE:
+  - install CMake as above.
+  - install Visual Studio 2015, Community (https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx).
+  - install Qt5, 32 bits or 64 bits, for VS2015. Even if your Windows is 64 bits, you can still install the 32 bits version of Qt5. Install the minimum (Tools should be optional, but its unselection does not seem to work: installer bug?).
+  \image html qtwin32.png
+  - install the corresponding Imagine++ package.
+  - find the location of QtGui5.dll in the installation directory of Qt (it should be in a subfolder called bin, such as: "C:\Qt\5.7.0\5.7\msvc2015\bin") and add this path to your PATH environment variable (\ref ev3). Also create an environment variable <tt>CMAKE_PREFIX_PATH</tt> and set it as "C:\Qt\5.7.0\5.7\msvc2015\lib\cmake".
+
+  \section iw1b Binary packages
+  
+  The installers just extract the prebuilt files and set the environment variable Imagine_DIR. You may choose to do that manually with one of the following archives:
+
+  - minGW: http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-win_x86_minGW.zip
+  - Visual Studio 32 bits version: http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-win_x86_msvc2015.zip
+  - Visual Studio 64 bits version: http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-win_x64_msvc2015.zip
+
+  Extract the archive in some location, and put the full path of the Imagine++ directory in the Imagine_DIR variable (\ref ev3).
+
+  \section iw2 Compiling from source
+
+  If you need to recompile Imagine++, follow these steps. If the process fails somewhere, please check \ref trouble.
+
+  \subsection iw20 1. Sources
+
+  Get the sources here http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-Source.zip and decompress them.
+
+  \subsection iw21 2. Tools
+
+  You should already have Visual, CMake and Qt installed (see \ref iw0). 
+
+Optional:
+  - NSIS from http://nsis.sourceforge.net.
+  - doxygen from http://www.stack.nl/~dimitri/doxygen/download.html#srcbin.
+
+  \subsection iw24 3. Imagine++
+
+  - Use CMake to generate solution (file with extension .sln). Opening this file launches Visual.
+  \image html build1.png "After clicking configure, CMake proposes to create the build directory if it does not exist"
+  \image html build2.png "Choose the generator (here Visual Studio 2013 in 32 bits)"
+  \image html buildPack.png "Select the packages you will create (do not select NSIS if it is not installed)"
+  \image html build3.png "Click 'Generate'"
+  \image html build4.png "After clicking 'Generate', the solution project is created in the build directory.
+  - Select the Debug mode and build (F7).
+  \image html build5.png "After 'Build solution' (in 'Build menu), or F7, in Debug mode"
+  - Select the Release mode and build again.
+  \image html build6.png "A new build should be done in Release mode"
+  - Optionally, right click on the 'doc' project in the 'Solution explorer' window and build it (this needs doxygen installed).
+  \image html build7.png "To generate the HTML documentation, you have to explicitly build it"
+  - Right-click on the 'PACKAGE' project in the 'Solution explorer' window and build it.
+  \image html build8.png "Building the packages"
+  - This creates the binary archive (extension .zip) and the NSIS installer (.exe).
+  \image html build9.png "The two created packages"
+  \image html build10.png "You can launch a test program by selecting it as 'StartUp Project' and pressing 'F5'"
+
+  <b>
+  You're done! Follow the steps above to actually install Imagine++, using either the installer (exe) or the binary package (tar.gz).
+  </b>
+
+  Go to \ref usage and check the tests.
+
+*/

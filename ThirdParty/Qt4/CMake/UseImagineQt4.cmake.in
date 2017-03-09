@@ -1,0 +1,18 @@
+# Imagine++ Libraries
+# Copyright (C) Imagine
+# For detailed information: http://imagine.enpc.fr/software
+
+set(COMPS QtCore QtGui)
+if(IMAGINE_OPENGL)
+    set(COMPS ${COMPS} QtOpenGL)
+    set(QT_USE_QTOPENGL TRUE)
+endif()
+find_package(Qt4 REQUIRED COMPONENTS ${COMPS})
+include(${QT_USE_FILE})
+if(Qt_Proj)
+    set(Qt4_Proj ${Qt_Proj})
+endif()
+
+if(NOT ${Qt4_Proj} STREQUAL "_PRELOAD_")
+    target_link_libraries(${Qt4_Proj} ${QT_LIBRARIES})
+endif()

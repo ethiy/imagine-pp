@@ -1,0 +1,42 @@
+/*! \page install_macos MacOS installation
+
+\section Requirements
+
+- Install CMake (http://www.cmake.org/download/)
+- Install XCode tools. Launch in a terminal:
+\code
+sudo xcode-select --install
+\endcode
+- Install Qt (https://www.qt.io/download-open-source/). Skip account, install the following components:
+  \image html qtmac.png
+
+\section im2 Install package
+
+Use the installer (which installs in folder <tt>/Library/Frameworks</tt>) or extract the archive package:
+
+   - http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-Darwin-i386.pkg
+   - http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-Darwin-i386.tar.gz
+
+Go to \ref usage and check the tests.
+
+Note: users of older versions needed the infamous <tt>IMAGINEPP_ROOT</tt> environment variable, which is no longer necessary. However, if you did not install in the expected location (<tt>/Library/Frameworks</tt>), you must indicate the path with the <tt>Imagine_DIR</tt> environment variable.
+
+\section im3 Alternative: compiling from source
+
+Follow the same procedure as for Linux: \ref il33 after downloading and extracting the source package:
+
+http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-Source.tar.gz
+
+After that, to create an installer package (<tt>Imagine.pkg</tt>), you can run the command
+
+<code>
+source \<ImageSrcDir\>/CMake/mkFramework.sh Imagine++-@IMAGINEPP_VERSION@-Darwin-i386.tar.gz
+</code>
+
+\section im4 Uninstallation
+
+<code>
+sudo rm -rf /Library/Frameworks/Imagine.framework
+</code>
+
+*/

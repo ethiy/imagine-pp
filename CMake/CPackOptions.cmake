@@ -1,0 +1,7 @@
+IF(CPACK_GENERATOR MATCHES "DEB")
+    SET(CPACK_PACKAGING_INSTALL_PREFIX "/usr/share/Imagine++")
+    SET(CPACK_DEBIAN_PACKAGE_NAME "imagine++")
+    SET(CPACK_DEBIAN_PACKAGE_DEPENDS "libqt5opengl5-dev, cmake-qt-gui, g++, gdb")
+    SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Pascal Monasse <monasse@imagine.enpc.fr>")
+    SET(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Imagine++ software libraries")
+ENDIF(CPACK_GENERATOR MATCHES "DEB")

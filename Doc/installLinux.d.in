@@ -1,0 +1,92 @@
+/*! \page install_linux Linux installation
+
+  The easiest is to use an installer, if available for your distribution. However, if you do not have root privileges, you can use a binary package. If you want to build directly from source, you will end up with a binary package adapted for your system. Do not forget to set the <tt>Imagine_DIR</tt> environment variable.
+
+  \section il1 Installers
+
+  If you are using Debian or derivative distribution (Ubuntu...), you can use the appropriate package, which will automatically fetch the dependencies.
+
+  - 64 bits: http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-Linux-x86_64.deb
+  - 32 bits: http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-Linux-i686.deb
+
+To install, enter the following command in a terminal:
+\code
+xdg-open Imagine++-@IMAGINEPP_VERSION@-Linux-x86_64.deb
+\endcode
+If the interface complains about "bad package quality" or proposes to "repair", agree and continue installation.
+
+  The last point is to set your <tt>Imagine_DIR</tt> environment variable. To do it permanently: assuming that you installed into <tt>/usr/share/Imagine++</tt>, as the Debian package does:
+  - enter the following command in a terminal
+\code
+echo "Imagine_DIR DEFAULT=/usr/share/Imagine++" >> $HOME/.pam_environment
+\endcode
+  - log out and log in again
+  - to check everything works:
+\code
+mkdir Test && cd Test
+cmake $Imagine_DIR/test
+make
+\endcode
+
+Go to \ref usage and check the tests.
+
+  \section il2 Alternative: Binary package
+
+  If you use another distribution, or if you do not have root privileges, you can download and extract the binary archive, after having installed the dependencies with your package manager: libqt5opengl5-dev, cmake-qt-gui, g++, gdb.
+
+  - 64 bits: http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-Linux-x86_64.tar.gz
+  - 32 bits: http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-Linux-i686.tar.gz
+
+  \section il3 Alternative: Building from source 
+
+  If for any reason one of the methods above is not appropriate for you, follow carefully these steps to create a binary package adapted to your system.
+
+  \subsection il31 1. Sources
+
+  Get the sources here http://imagine.enpc.fr/~monasse/Imagine++/downloads/Imagine++-@IMAGINEPP_VERSION@-Source.tar.gz and decompress them.
+
+  \subsection il32 2. Tools
+
+  Get and install the following with your package manager.
+  - Check that Qt is installed. You need not only the Qt runtime libraries, but also the header files. This is in a package called 'libqt5opengl5-dev'.
+  - CMake.
+  - g++.
+  - optionally, doxygen.
+
+  The commands below work with Debian and derivatives (Ubuntu and variants):
+  \code
+  sudo apt-get install libqt5opengl5-dev
+  sudo apt-get install cmake
+  sudo apt-get install g++
+  sudo apt-get install doxygen
+  \endcode
+
+  \subsection il33 3. Build
+
+  The following commands build the packages.
+  \code
+  mkdir BuildImagine
+  cd BuildImagine
+  cmake -DCMAKE_BUILD_TYPE:string=Release /path/to/Imagine++-directory
+  make
+  make package
+  \endcode
+
+  You should see the binary archive and maybe the Debian package. You should then install one of them, following the instructions above (\ref il1 or \ref il2).
+
+  Before installing, you may wish to check the tests, for example:
+  \code
+  ./Imagine/Graphics/test/ImagineGraphicsTest
+  \endcode
+
+  If the process fails somewhere, please check \ref trouble. 
+
+  \subsection il34 4. Documentation
+
+  If you want to build the documentation, run
+  \code
+  make doc
+  \endcode
+  before 'make package'
+
+*/

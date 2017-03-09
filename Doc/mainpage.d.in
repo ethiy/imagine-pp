@@ -1,0 +1,46 @@
+/*! \mainpage Imagine++ Libraries - version @IMAGINEPP_VERSION@
+
+The most up to date version of this documentation should be on the website:
+http://imagine.enpc.fr/~monasse/Imagine++/
+
+\section Introduction
+
+Imagine++ is a set of libraries developed at the %Imagine group
+(http://imagine.enpc.fr). Initially designed for students and beginners, and though it is still easy enough for them, Imagine++ is now used daily by %Imagine researchers. It consists in different modules. Four of them are publicly available:
+- The \ref Common, providing basic types and utilities.
+- The \ref LinAlg, providing linear algebra types and algorithms
+- The \ref Graphics, providing convenient 2D and 3D displays 
+- The \ref Images, providing image containers and algorithms
+
+Some useful links:
+- The Imagine++ home page is http://imagine.enpc.fr/~monasse/Imagine++
+- A quick start <a href="quickStartImagine++.pdf">guide</a>
+- This C++ course for beginners (in French...) makes extensive use of Imagine++, especially of the Graphics module: http://imagine.enpc.fr/~monasse/Info/ 
+- For any question, feel free to contact monasse@imagine.enpc.fr
+
+\section Installation
+- \subpage install_windows
+- \subpage install_linux
+- \subpage install_macos
+- \subpage install_qthelp
+
+\section Usage
+- \subpage usage
+
+\section tb Troubleshooting
+- \subpage trouble
+
+\section cl ChangeLog / Todo
+- \subpage changelog
+
+\section License
+
+Imagine++ is copyright 2007-2016 by \c %Imagine (ENPC/CSTB). As of version 4, Imagine++ relies entirely on open source third party libraries:
+- Eigen (http://eigen.tuxfamily.org/) for linear algebra (MPL2 license)
+- Qt4/Qt5 (http://qt-project.org/) for graphical user interface (LGPLv2 license)
+
+\section ov Older version
+
+Version 3.2.1 of Imagine++ is still available at http://imagine.enpc.fr/~keriven/Imagine++/. However, it has some unfixable runtime errors in the Graphics part with recent Linux distributions.
+
+*/
