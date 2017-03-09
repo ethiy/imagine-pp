@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+
+language: cpp
+
+git:
+    depth: 3
+
+branches:
+    only:
+    - master
+
+matrix:
+  fast_finish: true
+  include:
+    - os: linux
+      dist: trusty
+      env: LINUX=trusty
+      compiler: gcc
+      language: cpp
+      sudo: required
+      cache:
+        apt: true
+      before_install:
+        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+        - sudo apt-get update -qq
+        - sudo apt-get install build-essential g++-4.8 -y
+        - sudo apt-get install cmake -y
+        - sudo apt-get install doxygen -y
+        - sudo apt-get install libeigen3-dev -y
+        - sudo apt-get install libqt5opengl5-dev -y
+      script:
+        - mkdir -p build && mkdir -p build/trusty && cd build/trusty
+        - cmake ../..
+        - make -j4
+    
+    - os: linux
+      services:
+        - docker
+      env: LINUX=xenial
+      script:
+        - docker build .
+
+    - os: osx
+      osx_image: xcode8
+      cache:
+        directories:
+          - $HOME/Library/Caches/Homebrew
+      compiler: clang
+      before_install:
+        - brew update
+        - brew install doxygen
+        - brew install eigen
+        - brew install qt5
+        - mkdir build
+        - mkdir build/darwin
+      install:
+        - cd build/darwin
+        - cmake ../..
+      script:
+        - make -j4
