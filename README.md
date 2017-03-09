@@ -30,6 +30,6 @@ This Project is available under the BSD License. Third Party Libraries used in t
 | Library              | License       |
 | -------------------- |:-------------:|
 | Eigen                | MPL v2.0 |
-| Darwin               |LGPL v2.1 |
+| Darwin               | LGPL v2.1 |
 
 More details are available in [LICENSE](https://github.com/Ethiy/imagine-pp/blob/master/LICENSE) file.
