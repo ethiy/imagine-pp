@@ -52,6 +52,7 @@ matrix:
         - brew install doxygen
         - brew install eigen
         - brew install qt5
+        - brew link qt5 --force
         - mkdir build
         - mkdir build/darwin
       install:

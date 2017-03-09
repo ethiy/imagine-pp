@@ -6,6 +6,7 @@
 | ------------------------ |:-------------:|
 | Linux                    | [![Build Status](https://travis-ci.org/Ethiy/imagine-pp.svg?branch=master)](https://travis-ci.org/Ethiy/imagine-pp)|
 | Darwin                   |[![Build Status](https://travis-ci.org/Ethiy/imagine-pp.svg?branch=master)](https://travis-ci.org/Ethiy/imagine-pp)|
+| Windows                  | [![Build Status](https://ci.appveyor.com/api/projects/status/94v86tb23191aabt/branch/master?svg=true)](https://ci.appveyor.com/project/Ethiy/imagine-pp/branch/master)|
 
 ## Disclaimer
 

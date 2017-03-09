@@ -25,7 +25,7 @@ install:
   - C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -S mingw-w64-x86_64-toolchain"
   - C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -S libtool make"
   - C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -S mingw-w64-x86_64-{doxygen,cmake}"
-  - C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -S mingw-w64-x86_64-{eigen,qt5}"
+  - C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -S mingw-w64-x86_64-{eigen3,qt5}"
 build_script:
   - ps: New-Item -ItemType Directory -Path .\build\MSYS2
   - C:\msys64\usr\bin\bash.exe -lc "MSYSTEM=MINGW64 . /etc/profile; cd /C/projects/imagine-pp/build/MSYS2; /mingw64/bin/cmake -G'Unix Makefiles' ../.. ; make -j4"
