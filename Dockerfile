@@ -13,7 +13,7 @@ RUN apt-get install -y \
             libqt5opengl5-dev
 WORKDIR /home
 RUN git clone https://github.com/Ethiy/imagine-pp.git
-WORKDIR lib3ds/
+WORKDIR imagine-pp/
 RUN mkdir build && mkdir build/xenial
 WORKDIR build/xenial
 RUN cmake ../..
