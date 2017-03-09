@@ -5,7 +5,7 @@
 | Environment              | Status        |
 | ------------------------ |:-------------:|
 | Linux                    | [![Build Status](https://travis-ci.org/Ethiy/imagine-pp.svg?branch=master)](https://travis-ci.org/Ethiy/imagine-pp)|
-| Darwin                   |[![Build Status](https://travis-ci.org/Ethiy/imagine-pp.svg?branch=master)](https://travis-ci.org/Ethiy/imagine-pp)]|
+| Darwin                   |[![Build Status](https://travis-ci.org/Ethiy/imagine-pp.svg?branch=master)](https://travis-ci.org/Ethiy/imagine-pp)|
 
 ## Disclaimer
 
