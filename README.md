@@ -6,6 +6,7 @@ If you are looking for a lightweight Image Processing and Computer Vision C++ li
 
 ## Introduction
 This Library contains four publicly available modules:
+
 * The Common Library: providing basic types and utilities.
 * The LinAlg Library: providing linear algebra types and algorithms
 * The Graphics Library: providing convenient 2D and 3D displays
